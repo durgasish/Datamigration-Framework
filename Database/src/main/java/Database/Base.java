@@ -23,7 +23,7 @@ public class Base {
 	public static ResultSet rs;
 	public static ResultSet rs1;
 
-	
+
 
 	public Base() {
 		try {
@@ -77,42 +77,67 @@ public class Base {
 		}
 		return stmt1;
 	}
-	
+
 	// Code to close each and all Object related to Database connection
 
-		public void CloseTheConnection() throws SQLException {
-			
-			con = null;
-		    stmt = null;
-		    rs = null;
+	public void CloseSourceConnection() throws SQLException {
 
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (Exception e) {
-				}
-			}
-			if (stmt != null) {
-				try {
-					stmt.close();
-				} catch (Exception e) {
-				}
-			}
-			if (con != null) {
-				try {
-					con.close();
-				} catch (Exception e) {
-				}
-			}
-			
-			else {
-				System.out.println("Connection closed");
-			}
-			
-			
+		con = null;
+		stmt = null;
+		rs = null;
 
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (Exception e) {
+			}
+		}
+		if (stmt != null) {
+			try {
+				stmt.close();
+			} catch (Exception e) {
+			}
+		}
+		if (con != null) {
+			try {
+				con.close();
+			} catch (Exception e) {
+			}
+		}
+		else {
+			System.out.println("Source Connection Closed");
+		}
+	}
+	public void CloseDestinationConnection() throws SQLException {
+
+		con1 = null;
+		stmt1= null;
+		rs1 = null;
+
+		if (rs1 != null) {
+			try {
+				rs1.close();
+			} catch (Exception e) {
+			}
+		}
+		if (stmt1 != null) {
+			try {
+				stmt1.close();
+			} catch (Exception e) {
+			}
+		}
+		if (con1 != null) {
+			try {
+				con1.close();
+			} catch (Exception e) {
+			}
 		}
 
+		else {
+			System.out.println("Destination Connection Closed");
+		}
+
+	}
 }
 
 

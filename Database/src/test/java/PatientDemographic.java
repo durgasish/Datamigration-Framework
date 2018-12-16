@@ -123,14 +123,15 @@ public class PatientDemographic extends Base{
 	}
 
 	private int compareRS(ResultSet rs, ResultSet rs1) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 
 	@AfterMethod
 	public void teardown() throws SQLException {
-		CloseTheConnection();
+		CloseSourceConnection();
+		CloseDestinationConnection();
 	}
 
 

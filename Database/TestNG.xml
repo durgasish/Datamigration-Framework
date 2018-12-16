@@ -10,7 +10,6 @@
 	<test name="Norwood Test Cases">
 		<classes>
 			<class name="com.lilypad.qa.testcases.PatientDemographic"></class>
-
 		</classes>
 	</test>
 </suite>
